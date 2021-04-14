@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Tcy · UI Designer</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Guru Portfolio Template">
+	<meta name="keywords" content="personal, portfolio">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->   
+	<link href="images/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+	<link rel="stylesheet" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/magnific-popup.css"/>
+	<link rel="stylesheet" href="css/reset.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/LB.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- ==== MODERNIZR ==== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/scrollReveal.js"></script>
+
+<!-- 书本展示 -->
+	<style>
+		#box{width:50%; height: 100%; background:url(images/book/0.jpg) no-repeat; margin:50px auto ; position:relative; perspective: 1200px;}
+		#box .pag1{width: 50%; height: 100%; position: absolute; top: 0; right: 0; transform-style:preserve-3d; transistion:1s all ease; z-index:2; transform-origin:left center ;}
+		#box .pag1 span{width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+		.front{background: url(images/book/0.jpg) no-repeat right top; transform: translateZ(1.1px);}
+		.back{background: url(images/1.jpg) no-repeat left top; transform: translateZ(-1.1px) scale(-1,1);}
+		.pag2{width:50%; position:absolute; right:0; top:0; height:100%; background:url(images/1.jpg) no-repeat right top; z-index:1;}
+	</style>
+	<script>
+		window.onload = function(){
+			var oBox = document.getElementById('box');
+			var oPag = document.querySelector('#box .pag1');
+			var oFront = document.querySelector('#box .pag1 .front');
+			var oBack = document.querySelector('#box .pag1 .back');
+			var oPag2 = document.querySelector('#box .pag2');
+			
+			var iNow=0;
+			var bReady=true;
+			oBox.onclick = function(){
+				if(bReady==false) return;
+				bReady=false;
+				
+				iNow++;
+				oPag.style.transition = '1s all ease';
+				oPag.style.transform = 'rotateY(-180deg)';
+				
+				oPag.addEventListener('transitionend',function(){
+					oPag.style.transition = 'none';
+					oPag.style.transform = 'rotateY(0deg)';
+					
+					oFront.style.backgroundImage = oBox.style.backgroundImage = 'url(../images/book/'+iNow%5+'.jpg)';  //5有几张banner就%几
+					oBack.style.backgroundImage = oPag2.style.backgroundImage = 'url(../images/book/'+(iNow+1)%5+'.jpg)';
+					bReady=true;
+				},false);
+			}
+		}
+	</script>
+<!-- 书本展示结束 -->
+</head>
+<body>
+	<!-- ==== Preloader Section Start ==== -->
+	<div id="preloader">
+        <div class="pre-container">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+	<!-- ==== Preloader Section End ==== -->
+	
+	<!-- ==== Navigation Start ==== -->
+	<nav class="subpage-nav">
+        <div class="row">
+            <div class="container">
+                <div class="logo">
+						<a  class="back_btn"   href="javascript:window.history.go(-1)" style="float: left;width: 52px;height: 32px;line-height: 32px;margin: -2px;"><img width="50%;" src="images/back2.png"></a>
+						
+				</div>
+				
+				<div class="mobile-bar"><span></span></div>
+				<h1 style="margin-left:auto; margin-right:auto; float: left;line-height: 32px;color: #333333">BANNER</h1>
+                <ul class="nav-menu" style="float: right;">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#about">关于</a></li>
+                    <li><a href="index.html#portfolio">作品</a></li>
+                    <li><a href="index.html#lianxi">联系</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ==== Navigation End ==== -->
+
+	<!-- ==== Single Blog Section Start ==== -->
+	<section class="single-section spad">
+		<div class="container">
+			<div class="col-md-offset-1 col-md-10 single-blogpost">
+			<!-- 书本展示开始 -->
+			<div id="box" style="text-align: center;">
+				<div class="pag1">
+					<span class="front"></span>
+					<span class="back"></span>
+				</div>
+				<div class="pag2"></div>
+			</div>
+				<!-- 书本展示结束 -->
+		<div class="comment">
+            		
+				<!-- 返回按钮 -->
+				<div style="text-align: center">
+						<a  arget="_blank" href="javascript:window.history.go(-1)">
+						<button  class="site-button" type="submit" >返回</button>
+						</a>
+				</div>
+				<!-- 返回按钮结束 -->
+			</div>
+	</section>
+	<!-- ==== Single Blog Section End ==== -->
+	
+
+	<!-- ==== Footer Start ==== -->
+	<footer style="background: #222222;">
+			<div class="container">
+				
+				<p style="color: #ffffff;">Copyright © 2019.Tcy</p>
+			</div>
+		</footer>
+	<!-- ==== Footer End ==== -->
+
+
+	<!-- ==== Jquery and other scripts ==== -->
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="js/jquery.nav.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/magnific-popup.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/swiper.min.js"></script>
+
+</body>
+</html>

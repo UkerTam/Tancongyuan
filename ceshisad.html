@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lazyload 1</title>
+    <style>
+        img {
+	    display: block;
+	    margin-bottom: 50px;
+	    height: 600px;
+	}
+    </style>
+</head>
+<body>
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/i6_蓝牙设备.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/i6_排行榜.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/i6_我的.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/i6_月记录上.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/i6_月记录下.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/发现/i6_赛事详情.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/发现/i6_俱乐部.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/发现/i6_骑友圈.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/发现/i6_赛事.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/发现/i6_推荐上.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/发现/i6_推荐下.png">
+    <img src="images/loading.gif" data-src="images/TimingRide/绿/发现/i6_俱乐部.png">
+    <script>
+        function lazyload() {
+	    var images = document.getElementsByTagName('img');
+	    var len    = images.length;
+	    var n      = 0;      //存储图片加载到的位置，避免每次都从第一张图片开始遍历		
+	    return function() {
+		var seeHeight = document.documentElement.clientHeight;
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		for(var i = n; i < len; i++) {
+		    if(images[i].offsetTop < seeHeight + scrollTop) {
+		        if(images[i].getAttribute('src') === 'images/loading.gif') {
+			     images[i].src = images[i].getAttribute('data-src');
+			}
+			n = n + 1;
+		     }
+		}
+	    }
+	}
+	var loadImages = lazyload();
+	loadImages();          //初始化首页的页面图片
+	window.addEventListener('scroll', loadImages, false);
+    </script>
+</body>
+</html>

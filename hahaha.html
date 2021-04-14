@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Tcy · UI Designer</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+<!-- 改变文字信息 -->
+<p id="demo">
+		JavaScript 能改变 HTML 元素的内容。
+		</p>
+		<script>
+		function myFunction()
+		{
+			
+			x=document.getElementById("demo");  // 找到元素
+			x.innerHTML="Hello JavaScript!";    // 改变内容
+			
+		}
+		</script>
+		<button type="button" onclick="myFunction()">点击这里</button>
+
+
+<div style="height: 30px;"></div>
+	<!-- 改变Html图像 -->
+	<script>
+		function changeImage()
+		{
+			element=document.getElementById('myimage')
+			if (element.src.match("qxf2")) 
+			// qxf2需匹配else中的文件名
+			{
+				element.src="images/other/qxf1.png";
+			}
+			else
+			{
+				element.src="images/other/qxf2.png";
+			}
+		}
+		</script>
+		<img id="myimage" onclick="changeImage()" src="images/other/qxf1.png" >
+		<p>点击图片就可以打开或关闭这盏灯</p>
+</body>
+</html>

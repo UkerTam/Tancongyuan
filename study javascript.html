@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>Lazyload 2</title>
+
+	<link rel="stylesheet" href="css/xuexi.css"/>
+   
+</head>
+
+<body>
+<!-- javascript 03-输出、语句、注释
+	<p id="demo">dasdsadas</p>
+	<button type="button" onclick="myFunction()">改变内容</button>
+<script>
+function myFunction()
+{
+	x=document.getElementById("demo");//找到元素
+	x.innerHTML="Hello Javascript!";//改变内容
+}
+</script> -->
+
+<!-- 通过JavaScript更改变量 -->
+<p id="demo">z的值是:</p>
+<script>
+function mybtn01(){
+var x=7;
+var y=8;
+var z=x+y;
+document.getElementById("demo").innerHTML="z的值是："+z;
+}
+</script>
+
+<button type="button" onclick="mybtn01()">点我</button>
+
+
+
+<br>
+
+
+<!-- 调用数字和字符数据 -->
+<script>
+function mybtn02()
+{
+	var x1="zifu01";
+	var x2='zifu02';
+	var x3=123;
+	alert(x1 + "|" + x2 + "|" +x3);
+}
+</script>
+<button type="button" onclick="mybtn02()">调用数字和字符数据</button>
+
+
+<br>
+
+<!-- 数组的使用 -->
+<script>
+function mybtn03()
+{
+	//第一种方法
+ 	var cars01=new Array();
+	cars01[0]="奥迪";
+	cars01[1]="宝马";
+	cars01[2]="奔驰";
+	// alert(cars01[1]);
+
+	//第二种方法
+	var cars02=new Array("奥迪02","宝马02","奔驰02",)
+	// alert(cars02[0] + "|" +cars02.length);
+
+	//循环3次
+	var cars03=["奥迪03","宝马03","奔驰03"];
+	for(i=0;i<cars03.length;i++)
+	{
+		alert(cars03[i]);
+	}
+}
+</script>
+<button type="button" onclick="mybtn03()">数组的使用</button>
+
+
+<br>
+
+
+<!--对象的使用  -->
+<script>
+function mybtn04()
+{
+	var ren={xing:"tan",ming:"congyuan",sfz:"4123123123"}
+	alert(ren.xing);
+	alert(ren["ming"]);
+}
+</script>
+<button class="ant-btn ant-btn-red"  type="button" onclick="mybtn04()">对象的使用</button>
+
+
+<br>
+
+
+<!--字符/字符串-文本对象演示  -->
+<script>
+function mybtn05()
+{
+	var xm="tan cong yuan";
+	var changdu=xm.length;
+	alert(changdu);
+	alert(xm.toUpperCase());
+}
+</script>
+<button onclick="mybtn05()">字符/字符串-文本对象演示</button>
+
+
+<br>
+
+
+<!-- 带参数的函数调用 -->
+<script>
+function mybtn06(x,y)
+{
+	alert(x + "|" + y);
+}
+function mybtn06_2(x,y)
+{
+	alert(sf(x,y));
+}
+function sf(x,y)
+{
+	return x*y
+}
+</script>
+<button onclick="mybtn06('abc',123)">带参数的函数调用</button>
+<button onclick="mybtn06_2(3,5)">带参数的(有返回值)函数调用</button>
+
+
+<br>
+
+
+<script>
+function mybtn07()
+{
+	x=1;
+	y=2;
+	z=x+y;
+	//alert(z);
+	x=++x;	//++累加
+	y=--y;	//--递减
+	alert("x="+x + " | "+"y=" + y);
+}
+function mybtn07_2()
+{
+	x=1;
+	y=2;
+	x+=y;	//x=x+y	-=		*=		/=
+	alert(x + " | " + y);
+}
+function mybtn07_3()
+{
+	x="1";
+	y="2";
+	z=x+y;
+
+	x1="1"
+	y1+"2"
+	z1=x1+y1;
+	alert(z + " | " + z1);
+	//如果把数字与字符串相加，结果将成为字符串
+}
+</script>
+<button onclick="mybtn07()">=用于赋值</button>
+<button onclick="mybtn07_2()">特殊运算符</button>
+<button onclick="mybtn07_3()">字符型数字</button>
+
+
+<br>
+
+
+<!-- 比较运算符 -->
+<script>
+function mybtn08()
+{
+	x=5;
+	// alert(x==5);//true
+	y="5";
+	// alert(y==5);//true	
+	//alert(y===5);//===全等(值和类型)	返回false
+	//alert(y==="5");//===全等(值和类型)	返回true
+
+	if(x>=5)
+	{
+		alert("x大于等于5");
+	}
+	else
+	{
+		alert("x小于等于5");
+	}
+}
+</script>
+<button onclick="mybtn08()">比较运算符</button>
+
+
+
+
+<!-- 逻辑运算符 -->
+<script>
+	function mybtn09()
+{
+	x=5;
+	y=10;
+	//&& and
+	if(x>3 && y>100)
+	{
+		alert("x大于3，并且y也大于3");//if语句中的两个条件都为true的时候执行
+	}
+	else
+	{
+		alert("其他");
+	}
+	//|| or
+	if(x>100 || y>100)
+	{
+		alert("x大于3或者y大于100其中一个为真");//if语句中的两个条件，只要其中一个位true时执行
+	}
+	else
+	{
+		alert("都小于100");
+	}
+}
+	</script>
+<button onclick="mybtn09()">逻辑运算符</button>
+
+<script>
+function mybtn10()
+{
+x=1;
+y=2;
+//variablename=(condition)condition?value1:value2;
+z=(y>x)?x:y;//获得x和y中的最小值
+zz=(y>x)?y:x;//获得x和y中的最大值
+alert(z);
+alert(zz);
+}
+</script>
+<button onclick="mybtn10()">条件运算符</button>
+
+<br>
+
+<!-- if语句 -->
+<p>if-else语法</p>
+<script>
+function mybtn11()
+{
+	x=10;
+	y=5;
+	if(x>y)
+	{
+		document.getElementById("demo01").innerHTML="结果:x是大于y的";
+	}
+	else
+	{
+		document.getElementById("demo01").innerHTML="结果:x小于y";
+	}
+}
+</script>
+<button onclick="mybtn11()">if语句</button>
+<p id="demo01">x是否大于y</p>
+
+
+<br>
+
+
+<script>
+function mybtn12()
+{	
+
+		
+		var time=new Date().getHours();
+
+		if(time<11)
+		{
+		document.getElementById("demo02").innerHTML="Good morning";
+		}
+		else if(time>=11 || time<=13)
+		{
+		document.getElementById("demo02").innerHTML="中午";
+		}
+		else
+		{
+		document.getElementById("demo02").innerHTML="晚上";
+		}
+
+}
+</script>
+<button onclick="mybtn12()">TIME</button>
+<P id="demo02">时间</P>
+
+
+
+
+<!-- js用法，不需要引入jq -->
+<script>
+	window.onload = function(){
+		
+		var time=new Date().getHours();
+		var ziwo="好！"
+	
+		if(time>=6 && time<11)
+		{
+		document.getElementById("demo03").innerHTML="早上"+ziwo.toUpperCase();
+		}
+		else if(time>=11 && time<=14)
+		{
+		document.getElementById("demo03").innerHTML="中午"+ziwo.toUpperCase();
+		}
+		else if(time>=14 && time<=18)
+		{
+		document.getElementById("demo03").innerHTML="下午"+ziwo.toUpperCase();
+		}
+		else
+		{
+		document.getElementById("demo03").innerHTML="晚上"+ziwo.toUpperCase();
+							}
+	}
+</script>
+<P id="demo03">xian</P>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var time=new Date().getHours();
+
+		if(time<11)
+		{
+		document.getElementById("demo04").innerHTML="Good morning";
+		}
+		else if(time>=11 || time<=13)
+		{
+		document.getElementById("demo04").innerHTML="中午";
+		}
+		else
+		{
+		document.getElementById("demo04").innerHTML="晚上";
+		}
+	})
+</script>
+<P id="demo04">xian</P>
+
+
+<script>
+window.onload=function()
+{
+	var time=new Date().getHours();
+	var ziwo="好！"
+
+	if(time>=6 && time<=11)
+	{
+		document.getElementById("demo05").innerHTML="早上"+ziwo.toUpperCase();
+	}
+	else if(time>11 && time<13)
+	{
+		document.getElementById("demo05").innerHTML="中午"+ziwo.toUpperCase();
+	}
+	else if(time>13 && time<18)
+	{
+		document.getElementById("demo05").innerHTML="下午"+ziwo.toUpperCase();
+	}
+	else
+	{
+		document.getElementById("demo05").innerHTML="晚上"+ziwo.toUpperCase();
+	}
+}
+</script>
+<p id="demo05"></p>
+
+
+<script>
+window.onload=function()
+{
+	var time=new Date().getHours();
+	
+	if(time>6 && time<11)
+	{
+		document.getElementById("demo6").innerHTML="早上";
+	}
+	else if(time>11 && time<13)
+	{
+		document.getElementById("demo6").innerHTML="中午"
+	}
+	else if(time>13 && time<18)
+	{
+		document.getElementById("demo6").innerHTML="下午";
+	}
+	else
+	{
+		document.getElementById("demo6").innerHTML="晚上"
+	}
+}
+</script>
+<p id="demo6"></p>
+
+
+<script>
+/*
+函数类似于Java中的方法，也可以有返回值，有参数可以被调用，不调用执行
+有两种定义语法
+1、fucntion 函数名(参数列表){
+	函数体
+}
+
+2、var 函数名=function(参数列表){
+	函数体
+}
+使用一个匿名函数将函数的引用赋值给一个变量，这个变量就相当于函数的名字。
+
+函数的调用
+	函数名(实参列表)
+	或
+	var返回值=函数名(实参列表)
+
+	注意:
+	1、JS是弱类型语言，因此函数不需要指定返回类型，如果函数需要返回数据，直接使用return数据。
+		直接使用return数据，即可返回。
+	2、JS是弱类型语言，因此函数的形参列表不需要指定参数类型，只填写参数名即可。
+*/
+// 无参数
+/*
+	function a(){
+		alert("这是a函数")
+	}
+	a();
+
+*/
+// 有参数
+/*
+	function b(a,b){
+		alert("这是b函数参数a="+a+"参数b="+b)
+	}
+	// 调用b函数没有指定参数那么形参a和b的值为undefined
+	b(100)//只给b赋值
+	b(undefined,200)//只给b赋值
+	b(100,200)//给a和b都赋值
+*/
+</script>
+
+<script>
+	function mybtn07()
+	{
+		var xm="tancondsadgyuan"
+		var changdu=xm.length;
+		alert(changdu);
+		alert(xm.toUpperCase());
+	}
+</script>
+<button onclick="mybtn07()">字符串-文本对象演示</button>
+
+<br>
+<div style="height: 20px;"></div>
+
+<script>
+	var xm="tan congyuan"
+function mybtn08(x,y){
+alert(x+"|"+y)
+}
+
+function mybtn09(x,y){
+		alert(sf(x,y));
+}
+function sf(x,y)
+{
+	return x*y
+}
+</script>
+<button onclick="mybtn08('abc',123)">带参数的函数调用</button>
+
+<button onclick="mybtn09(3,5)">带参数的(有返回值)函数调用</button>
+
+<script>
+function mybtn10(){
+	var time=new Date().getHours();
+	if(time<8)
+	{
+		alert("早上好");
+	}
+	else if(time<13)
+	{
+		alert("中午好");
+	}
+	else if(time<24)
+	{
+		alert("晚上好");
+	}
+	else
+	{
+		alert("你好");
+	}
+}
+</script>
+<button onclick="mybtn10()">时间</button>
+
+<br>
+<div style="height: 20px;"></div>
+
+<script>
+function mybtn11(){
+	var day=new Date().getDate();
+	// alert(day);
+	switch(day){
+		case 1:
+		alert("今天是星期一");
+		break;
+
+		case 2:
+		alert("今天是星期二");
+		break;
+
+		case 3:
+		alert("今天是星期三");
+		break;
+
+		case 4:
+		alert("今天是星期四");
+		break;
+
+		default:
+		alert("今天星期几呢？");
+
+		
+
+	}
+}
+</script>
+<button onclick="mybtn11()">Switch语句</button>
+
+<br>
+<div style="height: 20px;"></div>
+<script>
+	function mybtn12(){
+		cars=["宝马","奔驰","大众"];
+		// alert(cars[1])
+		document.getElementById("carhere").innerHTML="我喜欢的汽车:"+cars[0];
+	}
+</script>
+<button onclick="mybtn12()">如何读取数组中的某个内容</button>
+<p id="carhere">我喜欢的汽车:</p>
+
+<br>
+<div style="height: 20px;"></div>
+<script>
+		function mybtn13(){
+			cars=["宝马","奔驰","大众"];
+			jieguo="";
+			for(var i=0;i<cars.length;i++)
+			{
+				jieguo=jieguo+cars[i]+"|"
+			}
+			document.getElementById("carhere2").innerHTML="我喜欢的汽车:"+jieguo;
+		}
+	</script>
+<button onclick="mybtn13()">for循环显示数组内容</button>
+<p id="carhere2">我喜欢的汽车:</p>
+
+
+<script>
+function mybtn14(){
+	ren=["谭琮元","男","广州"];
+	jieguo="";
+	for(x in ren){
+		jieguo=jieguo+ren[x]+"|";
+	}
+	document.getElementById("carhere3").innerHTML=jieguo;
+}
+</script>
+<button onclick="mybtn14()">for in 循环显示数组内容</button>
+<p id="carhere3"></p>
+
+
+<script>
+function mybtn15(){
+	var x=" ",i=0;
+	while(i<5){
+		x=x+"该数字为"+i+"<br>";
+		i++;
+	}
+	document.getElementById("demo7").innerHTML=x;
+}
+</script>
+<button onclick="mybtn15()">while循环</button>
+<P id="demo7"></P>
+
+<script>
+function mybtn16(){
+	var x=" ";
+	var time=new Date().getHours();
+	if(time<11){
+		x="早上好!";
+	}
+	else if(time<18){
+		x="下午好！"
+	}
+	else{
+		x="晚上好！"
+	}
+	document.getElementById("demo8").innerHTML=x;
+}
+</script>
+<button onclick="mybtn16()">if语句</button>
+<P id="demo8"></P>
+
+
+<script>
+function mybtn17(){
+	ren=["谭","琮","元"];
+	jieguo="";
+	for(x in ren){
+		jieguo=jieguo+ren[x]+"|";
+	}
+	document.getElementById("demo9").innerHTML=jieguo;
+}
+</script>
+<button onclick="mybtn17()">for in循环语句</button>
+<p id="demo9"></p>
+</body>
+</html>

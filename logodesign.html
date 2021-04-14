@@ -1,0 +1,132 @@
+	<!doctype html>
+<html lang="en">
+<head>
+	<title>Tcy · UI Designer</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Guru Portfolio Template">
+	<meta name="keywords" content="personal, portfolio">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->   
+	<link href="images/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+	<link rel="stylesheet" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/magnific-popup.css"/>
+	<link rel="stylesheet" href="css/reset.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/LB.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- ==== MODERNIZR ==== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/scrollReveal.js"></script>
+
+</head>
+<body>
+	<!-- ==== Preloader Section Start ==== -->
+	<div id="preloader">
+        <div class="pre-container">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+	<!-- ==== Preloader Section End ==== -->
+	
+	<!-- ==== Navigation Start ==== -->
+	<nav class="subpage-nav">
+        <div class="row">
+            <div class="container">
+                <div class="logo">
+						<a  class="back_btn"   href="javascript:window.history.go(-1)" style="float: left;width: 52px;height: 32px;line-height: 32px;margin: -2px;"><img width="50%;" src="images/back2.png"></a>
+						
+				</div>
+				
+				<div class="mobile-bar"><span></span></div>
+				<h1 style="margin-left:auto; margin-right:auto; float: left;line-height: 32px;color: #333333;font-family: 'Hiragino Sans GB', 'Hiragino Sans W3','microsoft yahei';">LOGO设计</h1>
+                <ul class="nav-menu" style="float: right;">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#about">关于</a></li>
+                    <li><a href="index.html#portfolio">作品</a></li>
+                    <li><a href="index.html#lianxi">联系</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+	<!-- ==== Navigation End ==== -->
+	<section class="single-section spad">
+		<div class="container">
+			<div class="col-md-offset-1 col-md-10 single-blogpost">		
+				<div class="post-img" style="margin: 0 0 100px 0">
+					<img src="images/logo/r1.png" alt="">
+				</div>
+				<div style="margin-bottom: 60px;">
+					<p class="cbiaoti">RINPOBIKES</p>
+					<p class="cbiaoti4" style="margin-top: -10px;">DESIGN IDEA</p>
+				</div>
+				<p class="logodesinp" style="margin-bottom: 160px;">
+				此LOGO是我在校期间所接的平面类设计单，客户是一位省内知名自行车车手，因此需要结合客户的特点进行设计。<br><br>
+				设计想法是在自行车比赛中，兔子代表突围(其特点包括为赞助商打广告、抢积分、战术)，结合客户店名RinPo bikes中的字母R、P所设计。
+				</p>
+				<div style="margin-bottom: 60px;">
+						<p class="cbiaoti">实体店面</p>
+						<p class="cbiaoti4" style="margin-top: -10px;">PHYSICAL STORE</p>
+					</div>
+			<div class="post-img">
+			<img src="images/logo/rp.png" style="width: 100%;">	
+			</div>
+			</div>
+			
+		</div>	
+	</section>
+
+
+	<!-- ==== Jquery and other scripts ==== -->
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="js/jquery.nav.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/magnific-popup.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<!-- 轮播开始 -->
+	<script type="text/javascript">
+	
+
+		window.onload = function() {
+			var swiper = new Swiper('.swiper-container',{
+				autoplay: true, //是否自动滚动
+				speed: 800,      //滚动速速
+				autoplayDisableOnInteraction: true,
+				loop: true,
+				centeredSlides: true,
+				slidesPerView: 1, //当前选中
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				// prevButton: '.swiper-button-prev', // 左右切换
+				// nextButton: '.swiper-button-next', // 左右切换
+				onInit: function(swiper) {
+					swiper.slides[3].className = "swiper-slide swiper-slide-active"; //当前选中 状态
+				},
+				breakpoints: {
+					100: {
+						slidesPerView: 0,
+					}
+				}
+			});
+		}
+
+	</script>
+	<!-- 轮播结束 -->
+</body>
+</html>
